@@ -3,8 +3,7 @@
 ##shared\_ptr
 shared\_ptr应该是使用的最多的智能指针，它所包含的指针可以在多个对象之间共享，使用引用计数来统计有多少个对象指向它指向的对象，直到最后一个shared\_ptr被销毁之后，指向的对象才被销毁。
 ##unique\_ptr
-unique\_ptr用来指向
+unique\_ptr用来指向不该被共享的对象，不能对unique\_ptr执行赋值，执行初始化。
 ##weak\_ptr
-
-
+weak\_ptr用来指向shared\_ptr，但是不会增加shared\_ptr的引用计数，主要是用来防止循环引用导致资源永远无法释放。
 
