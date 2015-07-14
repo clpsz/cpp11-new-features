@@ -12,7 +12,6 @@ all: $(target)
 
 $(target): $(objs) $(headers) FORCE
 	$(CXX) -o $@ $(objs) $(LDFLAGS)
-	@-rm -f *.o
 
 $(objs):%.o:%.cpp
 	$(CXX) $(CFLAGS) -c -o $@ $<
@@ -21,5 +20,5 @@ $(objs):%.o:%.cpp
 FORCE: 
 
 clean:
-	rm -f $(target) *.o
+	rm -f $(target) a.out *.o
 
