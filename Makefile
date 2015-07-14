@@ -1,5 +1,9 @@
-CFLAGS = -Wall -std=c++11
+CFLAGS = -Wall
 LDFLAGS = 
+
+ifneq ($(VER), old)
+CFLAGS += -std=c++11
+endif
 
 target = _main
 srcs = main.cpp
