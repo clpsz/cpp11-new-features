@@ -1,12 +1,16 @@
 #include "../common.h"
 #include <thread>
 #include <future>
+#include <chrono> // for time peroid
 
 int heavyCalc()
 {
-    int count = 10000;
+    int count = 5;
     while (count--)
     {
+        // sleep for 1 second
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        cout << "wait " << count << " seconds" << endl;
     }
 
     cout << "heavyCalc() finished" << endl;
